@@ -1017,6 +1017,8 @@ function build_kernel() {
     echo "Kernel build output copied to ${target_kernel_dir}/"
 }
 
+rm -rf prebuilts/misc/protobuf_vendorcompat
+
 function generate_host_overrides() {
     export BUILD_USERNAME=android-build
     HEX=$(openssl rand -hex 8)
