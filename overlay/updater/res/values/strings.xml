@@ -14,6 +14,6 @@
   -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
-    <string name="updater_server_url" translatable="false">https://raw.githubusercontent.com/ProjectInfinity-X/official_devices/16/gapps/{device}.json</string>
+    <string name="updater_server_url" translatable="false">https://roms.danielspringer.at/download.php?file=ota%2F16%2Fgapps%2F{device}.json&amp;download=true</string>
 
 </resources>
