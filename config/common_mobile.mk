@@ -20,7 +20,7 @@ PRODUCT_PRODUCT_PROPERTIES += \
 
 # Display
 PRODUCT_SYSTEM_EXT_PROPERTIES += \
-    debug.sf.frame_rate_multiple_threshold=60
+    debug.sf.frame_rate_multiple_threshold?=60
 
 # SystemUI plugins
 PRODUCT_PACKAGES += \
