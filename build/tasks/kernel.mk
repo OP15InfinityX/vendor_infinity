@@ -757,8 +757,10 @@ $(TARGET_PREBUILT_INT_KERNEL): $(DEPMOD) $(KERNEL_MODULES_PARTITION_FILE_LIST) $
 	@echo "Building $(BOARD_KERNEL_IMAGE_NAME)"
 	$(hide) rm -rf $(KERNEL_OUT)
 	@mkdir -p $(KERNEL_OUT) $(KERNEL_BAZEL_OUT)
-	$(hide) cd $(KERNEL_PATH) && \
-		python3 $(BUILD_TOP)/.repo/repo/repo manifest -o - -r \
+	# repo must not write its trace into the read-only source tree in the build sandbox.
+	# Fail on manifest errors instead of continuing with empty stamping metadata.
+	$(hide) set -o pipefail && cd $(KERNEL_PATH) && \
+		REPO_TRACE=0 python3 $(BUILD_TOP)/.repo/repo/repo manifest -o - -r \
 		| awk -v pat="kernel/platform/kernel-$(TARGET_KERNEL_VERSION)" ' \
 			/^  <project.*\/>$$/    { if (index($$0, pat)) { gsub(pat "/", ""); print }; next } \
 			/^  <project/          { keep = index($$0, pat) > 0; if (keep) { gsub(pat "/", ""); print }; buf = 1; next } \
