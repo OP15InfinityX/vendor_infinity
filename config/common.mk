@@ -55,6 +55,11 @@ PERF_ANIM_OVERRIDE ?= false
 PRODUCT_PRODUCT_PROPERTIES += \
     persist.sys.activity_anim_perf_override?=$(PERF_ANIM_OVERRIDE)
 
+# Expose the device-specific bypass charging capability to SystemUI.
+BYPASS_CHARGE_SUPPORTED ?= false
+PRODUCT_PRODUCT_PROPERTIES += \
+    persist.sys.battery_bypass_supported=$(BYPASS_CHARGE_SUPPORTED)
+
 # Backup Tool
 PRODUCT_COPY_FILES += \
     vendor/infinity/prebuilt/common/bin/backuptool.sh:install/bin/backuptool.sh \
