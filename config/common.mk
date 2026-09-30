@@ -287,7 +287,9 @@ PRODUCT_COPY_FILES += \
 
 # Gapps
 ifeq ($(WITH_GAPPS),true)
-$(call inherit-product, vendor/pixel/gms/products/gms.mk)
+# Keep the device-configurable SetupWizard locale behavior in the ROM config.
+# Google packages and proprietary files remain in the upstream GMS repository.
+$(call inherit-product, vendor/infinity/config/gms.mk)
 $(call inherit-product, vendor/pixel/themepicker/products/themepicker.mk)
 $(call inherit-product, vendor/pixel/sounds/products/sounds.mk)
 
