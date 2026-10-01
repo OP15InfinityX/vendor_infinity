@@ -36,6 +36,7 @@ endif
 # INFINITY System Version
 PRODUCT_PRODUCT_PROPERTIES += \
   ro.infinity.android.version=$(ANDROID_VERSION) \
+  ro.infinity.with_gapps=$(if $(filter true,$(WITH_GAPPS)),true,false) \
   ro.infinity.build.version=$(INFINITY_VERSION) \
   ro.infinity.build.status=$(INFINITY_BUILD_TYPE) \
   ro.modversion=$(INFINITY_VERSION) \
