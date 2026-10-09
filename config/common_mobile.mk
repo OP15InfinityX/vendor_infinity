@@ -11,6 +11,7 @@ include vendor/infinity/config/lineage_audio.mk
 # Apps
 PRODUCT_PACKAGES += \
     AvatarPicker \
+    Canvas \
     Glimpse \
     LatinIME
 
