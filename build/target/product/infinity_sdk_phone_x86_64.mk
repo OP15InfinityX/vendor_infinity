@@ -27,7 +27,7 @@ PRODUCT_ENFORCE_ARTIFACT_PATH_REQUIREMENTS := false
 
 # Overrides
 PRODUCT_NAME := infinity_sdk_phone_x86_64
-PRODUCT_MODEL := Infinity X 4.1 Emulator x86_64
+PRODUCT_MODEL := Infinity X Emulator x86_64
 
 PRODUCT_SDK_ADDON_NAME := lineage
 PRODUCT_SDK_ADDON_SYS_IMG_SOURCE_PROP := $(LOCAL_PATH)/source.properties
